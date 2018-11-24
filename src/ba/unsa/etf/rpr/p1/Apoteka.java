@@ -2,13 +2,14 @@ package ba.unsa.etf.rpr.p1;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 import java.util.logging.*;
 
 
 public class Apoteka {
-
+    Set<Aparat> aparati=new TreeSet<>();
 
 
     String getNazv(){
@@ -16,7 +17,9 @@ public class Apoteka {
     }
 
     public Aparat dodajDigitalniAparat(String digitalni, int i) {
-        return null;
+        DigitalniAparat x=new DigitalniAparat(digitalni,i);
+        aparati.add(x);
+        return x;
     }
 
     public Map<Aparat, Integer> cijenaZaSastojak(String s1) {
@@ -49,7 +52,8 @@ public class Apoteka {
     }
 
     public Aparat dodajAnalogniAparat(String analogni, int i) {
-
-        return null;
+        AnalogniAparat x=new AnalogniAparat(analogni,i);
+        aparati.add(x);
+        return x;
     }
 }

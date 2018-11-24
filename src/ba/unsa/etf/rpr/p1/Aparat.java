@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.p1;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 public abstract class Aparat {
     int serijski;
@@ -51,7 +52,11 @@ public abstract class Aparat {
     }
 
     public Set<String> dajPodrzaneSastojke() {
-        return null;
+        Set<String> podrzaniSastojci = new TreeSet<>();
+        for(Map.Entry<String,Integer> element: sastojci.entrySet()){
+            podrzaniSastojci.add(element.getKey());
+        }
+        return podrzaniSastojci;
     }
 
     public Map<String, Integer> dajMogucnostDoziranja() {
@@ -59,5 +64,22 @@ public abstract class Aparat {
     }
     void registrujSastojak(String naziv, int cijena){
         sastojci.putIfAbsent(naziv,cijena);
+    }
+
+    @Override
+    public String toString() {
+        String display;
+        if(krediti==0){
+            display= "Aparat " + sifra + " je ugasen";
+        }
+        else{
+            display=  "Aparat " + sifra + " je upaljen (preostalo "+krediti+" kredita)";
+        }
+
+      return display;
+    }
+
+    public int compareTo(Aparat a){
+        return  this.sifra.compareTo(a.sifra);
     }
 }
