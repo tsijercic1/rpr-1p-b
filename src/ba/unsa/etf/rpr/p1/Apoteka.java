@@ -1,36 +1,24 @@
 package ba.unsa.etf.rpr.p1;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
-import java.util.function.BooleanSupplier;
 import java.util.function.Function;
-import java.util.logging.*;
-
 
 public class Apoteka {
-    Set<Aparat> aparati=new TreeSet<>();
+    ArrayList<Aparat> aparati=new ArrayList<>();
 
-
-    String getNazv(){
-        return null;
+    public Aparat dodajDigitalniAparat(String sifra, int serijski) {
+        Aparat result = new DigitalniAparat(sifra,serijski);
+        aparati.add(result);
+        return result;
     }
 
-    public Aparat dodajDigitalniAparat(String digitalni, int i) {
-        DigitalniAparat x=new DigitalniAparat(digitalni,i);
-        aparati.add(x);
-        return x;
-    }
+    public Aparat dodajAnalogniAparat(String sifra, int serijski) {
+        Aparat result = new DigitalniAparat(sifra,serijski);
+        aparati.add(result);
+        return result;
 
-    public Map<Aparat, Integer> cijenaZaSastojak(String s1) {
-        return null;
-    }
-
-  //  public Set<Aparat> dajAparate(Filter filter) {
-    //    return null;
-    //}
-    public Set<Aparat> dajAparate(Function filter) {
-        return null;
     }
 
     public Aparat dodajKupljenuMasinu(String analogni, int i) {
@@ -49,11 +37,14 @@ public class Apoteka {
     }
 
     public void dodajSastojak(String digitalni, String s0, int i) {
+
     }
 
-    public Aparat dodajAnalogniAparat(String analogni, int i) {
-        AnalogniAparat x=new AnalogniAparat(analogni,i);
-        aparati.add(x);
-        return x;
+    public Set<Aparat> dajAparate(Function<Aparat,Boolean> function) {
+        return null;
+    }
+
+    public Map<Aparat, Integer> cijenaZaSastojak(String s1) {
+        return null;
     }
 }

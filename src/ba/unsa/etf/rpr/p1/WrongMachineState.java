@@ -1,4 +1,4 @@
 package ba.unsa.etf.rpr.p1;
 
-public class WrongMachineState extends Error{
+public class WrongMachineState extends Exception{
 }

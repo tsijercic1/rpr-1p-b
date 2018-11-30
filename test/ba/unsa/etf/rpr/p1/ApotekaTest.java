@@ -1,13 +1,11 @@
 package ba.unsa.etf.rpr.p1;
 
-import java.util.logging.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -150,9 +148,9 @@ class ApotekaTest {
     @Test
     void dajAparate5() {
 
-    //    Set<Aparat> aparati = apoteka.dajAparate( m ->  m.getNaziv().equals("digitalni"));
+        Set<Aparat> aparati = apoteka.dajAparate( m ->  m.getNaziv().equals("digitalni"));
 
-      // assertEquals(1, aparati.size());
+       assertEquals(1, aparati.size());
     }
 
 
