@@ -73,7 +73,7 @@ class ApotekaTest {
         assertEquals(2, map.size());
 
         assertAll(map.entrySet().stream().map(entry -> () -> {
-            assertEquals("m0", entry.getValue());
+            assertEquals("s0", entry.getValue());
         }));
     }
 

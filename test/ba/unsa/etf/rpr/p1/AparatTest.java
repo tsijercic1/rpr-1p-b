@@ -149,7 +149,7 @@ class AparatTest {
 
     @Test
     void aparatEquals2() {
-        Aparat other = apoteka.dodajDigitalniAparat("digitalni", 1251);
+        Aparat other = apoteka.dodajDigitalniAparat("digitalni", 125111);
         assertEquals(other, digitalni);
     }
 
